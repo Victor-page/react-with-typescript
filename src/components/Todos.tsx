@@ -8,7 +8,11 @@ const Todos: React.FC<{
 }> = ({ items, onRemoveTodo }) => (
   <ul className={classes.todos}>
     {items.map(({ id, text }) => (
-      <TodoItem key={id} text={text} onRemoveTodo={onRemoveTodo} id={id} />
+      <TodoItem
+        key={id}
+        text={text}
+        onRemoveTodo={onRemoveTodo.bind(null, id)}
+      />
     ))}
   </ul>
 );
